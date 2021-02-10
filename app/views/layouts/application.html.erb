@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>RailsSimpleAirbnb</title>
+    <!-- Add these line for detecting device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +13,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <%= link_to "Airbnb", flats_path , class: 'navbar-brand flex-grow-1' %>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Create new flat", new_flat_path, class: 'btn btn-light'  %>
+        </li>
+      </ul>
+    </nav>
+    <div class="container pt-4">
+      <%= yield %>
+    </div>
   </body>
 </html>
